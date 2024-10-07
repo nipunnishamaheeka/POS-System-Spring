@@ -6,4 +6,7 @@ public class AppUtil {
     public static String createCustomerId(){
         return "Customer-"+ UUID.randomUUID();
     }
+    public static String createItemId(){
+        return "Item-"+ UUID.randomUUID();
+    }
 }
