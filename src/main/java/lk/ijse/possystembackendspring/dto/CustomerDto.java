@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class CustomerDto implements SuperDto, CustomerResponse {
 
-    private String custId;
-    private String custName;
-    private String custAddress;
-    private double custSalary;
+    private String id;
+    private String name;
+    private String address;
+    private double salary;
 }

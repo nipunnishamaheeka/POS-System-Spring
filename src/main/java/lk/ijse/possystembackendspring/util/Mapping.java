@@ -23,7 +23,7 @@ public class Mapping {
         return modelMapper.map(entity, CustomerDto.class);
     }
     public List<CustomerDto> convertToCustomerDtoList(List<CustomerEntity> entities){
-     return modelMapper.map(entities, new TypeToken<CustomerDto>(){}.getType());
+     return modelMapper.map(entities, new TypeToken<List<CustomerDto>>(){}.getType());
     }
 
 }
