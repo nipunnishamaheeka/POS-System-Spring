@@ -1,12 +1,11 @@
 package lk.ijse.possystembackendspring.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -17,7 +16,9 @@ public class ItemEntity implements SuperEntity {
     @Id
     private String id;
     private String name;
-    private String qty;
+    private int qty;
     @Column(columnDefinition = "DECIMAL(10,2)")
     private double price;
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+    private List<OrderDetailsEntity> orderDetailsList;
 }

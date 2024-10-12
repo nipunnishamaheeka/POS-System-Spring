@@ -2,9 +2,11 @@ package lk.ijse.possystembackendspring.util;
 
 import lk.ijse.possystembackendspring.dto.CustomerDto;
 import lk.ijse.possystembackendspring.dto.ItemDto;
+import lk.ijse.possystembackendspring.dto.OrderDetailDto;
 import lk.ijse.possystembackendspring.dto.OrderDto;
 import lk.ijse.possystembackendspring.entity.CustomerEntity;
 import lk.ijse.possystembackendspring.entity.ItemEntity;
+import lk.ijse.possystembackendspring.entity.OrderDetailsEntity;
 import lk.ijse.possystembackendspring.entity.OrderEntity;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -47,5 +49,18 @@ public class Mapping {
     }
     public List<OrderDto> convertToOrderDTOList(List<OrderEntity> orders) {
         return modelMapper.map(orders, new TypeToken<List<OrderDto>>() {}.getType());
+    }
+
+    public OrderDetailsEntity convertToOrderDetailEntity(OrderDetailDto dto) {
+        return modelMapper.map(dto, OrderDetailsEntity.class);
+    }
+
+    public OrderDetailDto convertToOrderDetailDto(OrderEntity entity) {
+        return modelMapper.map(entity, OrderDetailDto.class);
+    }
+
+
+    public List<OrderDetailDto> convertToOrderDetailDTOList(List<OrderDetailsEntity> orders) {
+        return modelMapper.map(orders, new TypeToken<List<OrderDetailDto>>() {}.getType());
     }
 }

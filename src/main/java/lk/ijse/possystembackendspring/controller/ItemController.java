@@ -27,7 +27,6 @@ public class ItemController {
     public ResponseEntity<Void> saveItem(@RequestBody ItemDto itemDto) {
 
         try {
-
             itemService.saveItem(itemDto);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (DataPersistFailedException e) {
@@ -37,7 +36,7 @@ public class ItemController {
         }
     }
 
-    @GetMapping(value = "allitems", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<ItemDto> getAllItem() {
         System.out.println("itemService.getAllItem() = " + itemService.getAllItem());
         return itemService.getAllItem();

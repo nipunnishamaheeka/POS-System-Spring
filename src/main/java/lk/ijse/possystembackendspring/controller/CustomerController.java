@@ -27,7 +27,6 @@ public class CustomerController {
     public ResponseEntity<Void> saveCustomer(@RequestBody CustomerDto customerDto){
 
                 try{
-
                     customerService.saveCustomer(customerDto);
                     return new ResponseEntity<>(HttpStatus.CREATED);
                 }catch (DataPersistFailedException e){

@@ -35,7 +35,7 @@ public class OrderController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    @GetMapping(value = "allorders", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<OrderDto> getAllOrders() {
        // System.out.println("itemService.getAllItem() = " + itemService.getAllItem());
         return orderService.getAllOrders();

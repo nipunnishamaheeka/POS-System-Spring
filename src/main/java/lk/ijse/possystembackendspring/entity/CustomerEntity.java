@@ -1,12 +1,11 @@
 package lk.ijse.possystembackendspring.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,4 +20,7 @@ public class CustomerEntity implements SuperEntity {
     private String address;
     @Column(columnDefinition = "DECIMAL(10,2)")
     private double salary;
+    @OneToMany
+    @JoinColumn(name = "customerId")
+    private List<OrderEntity> orderList;
 }

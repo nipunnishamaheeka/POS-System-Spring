@@ -1,6 +1,5 @@
 package lk.ijse.possystembackendspring.dto;
 
-import lk.ijse.possystembackendspring.customObj.ItemResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,10 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ItemDto implements SuperDto, ItemResponse {
-
-    private String id;
-    private String name;
+public class OrderDetailDto {
     private int qty;
-    private double price;
+    private String itemid;
 }
