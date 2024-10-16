@@ -32,7 +32,9 @@ public class ItemServiceImpl implements ItemService {
     public void saveItem(ItemDto itemDto) {
         itemDto.setId(AppUtil.createItemId());
         var itemEntity = mapping.convertToItemEntity(itemDto);
+        System.out.println("itemEntity = " + itemEntity);
         var savedItem = itemDAO.save(itemEntity);
+        System.out.println("savedItem = " + savedItem);
         if(savedItem == null){
             throw new DataPersistFailedException("Cannot save");
         }

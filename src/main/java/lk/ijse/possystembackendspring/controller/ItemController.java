@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/items")
 @RequiredArgsConstructor
@@ -28,6 +28,7 @@ public class ItemController {
 
         try {
             itemService.saveItem(itemDto);
+            System.out.println("itemDto = " + itemDto);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (DataPersistFailedException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
