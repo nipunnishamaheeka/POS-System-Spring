@@ -55,7 +55,11 @@ The **Spring POS API** is a comprehensive, flexible, and scalable Point of Sale 
 - **Lombok**: Reduces boilerplate code, speeding up development.
 
 ---
+## API Documentation
 
+You can view the detailed API documentation with example requests and responses: [**here**](https://documenter.getpostman.com/view/35385181/2sAXxV7AT1)
+
+---
 ## 🌐 Frontend Repository
 
 Check out the frontend implementation for this project:  
